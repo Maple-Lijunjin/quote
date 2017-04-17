@@ -1,0 +1,16 @@
+ <!--可变内容结束-->
+ <?php
+ //显示管理员链接（即管理员页面跟普通用户不一样）
+ //-如果用户是管理员且当前页面不为logout.php
+ //-或者$loggedin变量为TRUE（例如用户刚刚登录）
+ if ((is_administrator() && (basename($_SERVER['PHP_SELF']) != 'logout.php')) OR (isset($loggedin) && $loggedin) ){
+     //创建链接
+     print "<hr/><h3>Site Admin</h3><p><a href='add_quote.php'>Add Quote</a><-->
+     <a href='view_quotes.php'>View All Quotes</a><-->
+     <a href='logout.php'>Logout</a></p>";
+ }
+ ?>   
+    </div>
+    <div id="footer">Content &copy; 2017</div>
+</body>
+</html>
